@@ -1,0 +1,11 @@
+default: &default_settings
+  port: 6379
+  driver: hiredis
+  host: localhost
+development:
+  <<: *default_settings
+staging:
+  <<: *default_settings
+production:
+  <<: *default_settings
+  host: 192.168.1.22
