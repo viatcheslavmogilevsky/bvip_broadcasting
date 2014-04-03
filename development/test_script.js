@@ -1,5 +1,5 @@
 
-  stream = new EventSource('/stream?auth_token=aruRGNO1RMXW9daxN_pIlw');
+  stream = new EventSource('/stream?auth_token=VXbNYV9RBND1f_kcwTkZug');
   stream.onmessage = function(e) {
     var newElement = document.createElement("li");
     eventList = document.getElementById("event-list")

@@ -35,7 +35,7 @@ class Broadcaster < Sinatra::Base
     stream :keep_open do |out|
       redis_client.subscribe(*channel_map.values) do |on|
         on.message do |channel, msg|
-          out << "data: {\"field_name\":\"#{MESSAGE_FIELDS[inverted_map[channel]]}\",\"content\":#{msg}} \n\n"
+          out << "data: #{msg} \n\n"
           if (channel == channel_map[:status_changes]) && (msg == '1')
             redis_client.unsubscribe(*channel_map.values)
           end
