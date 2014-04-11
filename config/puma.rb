@@ -7,4 +7,4 @@ rackup "#{root}/config.ru"
  
 threads 4, 8
  
-activate_control_app
+activate_control_app "unix://#{root}/tmp/puma/ctl.sock"
