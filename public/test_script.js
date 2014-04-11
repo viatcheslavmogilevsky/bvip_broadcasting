@@ -10,6 +10,10 @@ $(function() {
       list = $('#event-list')[0];
       $(newElement).html(e.data);
       $(list).append(newElement);
+
+      if($("#event-list li").length() > 10) {
+        $("#event-list li:first").remove();
+      }
     }
 
     Source.onerror = function() {
